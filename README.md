@@ -2,6 +2,10 @@
 
 A responsive, monochrome portfolio inspired by the typography, ASCII imagery, and keyboard navigation of [Yannick Gregoire's website](https://yannickgregoire.nl/). Original implementation and résumé-based content, with Sanjiv's GitHub profile photo rendered as animated ASCII text.
 
+## Live website
+
+[Open the public portfolio](https://sanjivps.github.io/sanjiv-portfolio/) · [GitHub repository](https://github.com/Sanjivps/sanjiv-portfolio)
+
 ## Run locally
 
 Requires Python 3. Node.js is only needed for the optional syntax check.
@@ -27,7 +31,16 @@ Use **H** (home), **B** (biography), **E** (experience), **P** (projects), **S**
 
 ## Deploy
 
-Deploy the `dist/` directory on any static host. All asset paths are relative, so repository subpaths work as well. The Sites deployment starts private. The GitHub repository is a separate copy of the source.
+GitHub Pages serves the root of the `gh-pages` branch. The `main` branch contains the editable source. After committing changes to `dist/`, publish from a normal clone with:
+
+```sh
+git push origin main
+git subtree push --prefix dist origin gh-pages
+```
+
+In the original Codex checkout, the GitHub remote is named `github`, so substitute `github` for `origin` in both commands.
+
+You can also deploy `dist/` on any static host. All asset paths are relative. A separate owner-private Sites deployment is available at https://sanjiv-saravanan-portfolio.sanjivian1.chatgpt.site. GitHub Pages is the public site; Sites maintains its own source snapshot.
 
 ## Editing
 
@@ -39,4 +52,4 @@ Update résumé content in `dist/index.html` and replace `dist/assets/sanjiv-sar
 npm run check
 ```
 
-Browser QA covers desktop/mobile layout, section navigation, disclosure panels, theme inversion, reduced motion, and the résumé download path.
+Verified in the browser at desktop size and a 390 px mobile viewport: no horizontal overflow, section navigation and letter shortcuts, expandable experience entries, theme persistence, motion pause and reduced-motion preferences, and email copying. All local asset URLs, including the résumé PDF, returned HTTP 200. No browser console errors were observed. Mobile verification used viewport emulation, not a physical phone.
