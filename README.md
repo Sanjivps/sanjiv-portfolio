@@ -1,6 +1,6 @@
 # Sanjiv Saravanan — Portfolio
 
-A responsive, monochrome portfolio inspired by the typography, ASCII imagery, and keyboard navigation of [Yannick Gregoire's website](https://yannickgregoire.nl/). Original implementation and résumé-based content, with Sanjiv's GitHub profile photo rendered as animated ASCII text.
+A responsive, monochrome portfolio inspired by the typography, ASCII imagery, and keyboard navigation of [Yannick Gregoire's website](https://yannickgregoire.nl/). Original implementation and résumé-based content, with Sanjiv's GitHub profile photo rendered as animated ASCII text. The portrait uses a masked silhouette with independent head tilt, shoulder sway, breathing, and pointer response; this is a photo animation, not real video footage.
 
 ## Live website
 
@@ -44,7 +44,7 @@ You can also deploy `dist/` on any static host. All asset paths are relative. A 
 
 ## Editing
 
-Update résumé content in `dist/index.html` and replace `dist/assets/sanjiv-saravanan-resume.pdf` when needed. The downloadable PDF is the user-supplied original, including its contact details. The portrait is from the user's GitHub profile. The Doto font is distributed under the SIL Open Font License in `dist/assets/OFL-Doto.txt`. No assets or source code were copied from the design reference.
+Update résumé content in `dist/index.html` and replace `dist/assets/sanjiv-saravanan-resume.pdf` when needed. The downloadable PDF is the user-supplied original, including its contact details. The portrait is from the user's GitHub profile. The Doto font is distributed under the SIL Open Font License in `dist/assets/OFL-Doto.txt`. No assets or source code were copied from the design reference. Jurn previews use the app's official App Store screenshots (https://apps.apple.com/us/app/jurn-daily-reset/id6760151833). The Laundrify preview is a portfolio recreation based on the user's public repository components (https://github.com/Sanjivps/laundrify), with explicitly labeled demo data and the repository's logo. It is not a live connection to laundry machines.
 
 ## Checks
 
