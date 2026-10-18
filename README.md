@@ -1,6 +1,10 @@
 # Sanjiv Saravanan — Portfolio
 
-A responsive, monochrome portfolio inspired by the typography, ASCII imagery, and keyboard navigation of [Yannick Gregoire's website](https://yannickgregoire.nl/). Original implementation and résumé-based content, with Sanjiv's GitHub profile photo rendered as animated ASCII text. The portrait uses a masked silhouette with independent head tilt, shoulder sway, breathing, and pointer response; this is a photo animation, not real video footage.
+A responsive, monochrome portfolio inspired by the typography, intro sequence, ASCII imagery, and keyboard navigation of [Yannick Gregoire's website](https://yannickgregoire.nl/), without its pop-up project videos. Original implementation and résumé-based content.
+
+- **Intro:** a full-screen ASCII scene with rain plays while the dot-matrix name rises from the bottom as stretched bars and settles into place. A curtain then lifts to reveal the same name on the page. Press any key, click, or scroll to skip. The intro is skipped for reduced-motion users and deep links.
+- **Portrait:** Sanjiv's GitHub profile photo rendered as live ASCII. The person and the street are separate layers, so the figure breathes, sways, and turns toward the pointer in front of a background with parallax, rain, and flickering city lights. It also has a hover lens, occasional glitch bands, and a decode-in reveal. This is a photo animation, not video footage.
+- **Type:** every size comes from how many monospace characters fit across the viewport, so text stays on one grid. Headings and hero copy decode with a text scramble.
 
 ## Live website
 
@@ -21,13 +25,14 @@ Open http://127.0.0.1:4173. No installation or build step is needed.
 
 - `dist/index.html`: biography, experience, projects, toolkit, and contact content.
 - `dist/styles.css`: responsive layout, themes, and motion preferences.
-- `dist/app.js`: ASCII portrait, keyboard navigation, theme persistence, and email copying.
-- `dist/assets/`: self-hosted Doto font, portrait, original résumé, and favicon.
+- `dist/app.js`: intro sequence, ASCII scene renderer, text scramble, keyboard navigation, theme persistence, and email copying.
+- `dist/assets/portrait-ascii.png`: three grayscale layers packed into RGB and pre-toned for ASCII. R holds the person with boosted local contrast, G the street with the person painted out, and B the person's mask. The mask was generated from `portrait.png` with rembg (u2net_human_seg, plus isnet hair detail).
+- `dist/assets/`: also holds the self-hosted Doto font, the original portrait, the original résumé, and the favicon.
 - `.openai/hosting.json`: Sites hosting configuration.
 
 ## Keyboard controls
 
-Use **H** (home), **B** (biography), **E** (experience), **P** (projects), **S** (toolkit), **C** (contact), and **I** (invert colors). Browser modifier shortcuts are preserved. All controls also support pointer, touch, and standard keyboard navigation. Animation respects reduced-motion settings and has a pause button.
+Use **H** (home), **B** (biography), **E** (experience), **P** (projects), **T** (toolkit), **C** (contact), **I** (invert colors), and **M** (pause or resume motion). Browser modifier shortcuts are preserved. All controls also support pointer, touch, and standard keyboard navigation. The theme follows the system setting until it is inverted. Animation respects reduced-motion settings.
 
 ## Deploy
 
@@ -52,4 +57,4 @@ Update résumé content in `dist/index.html` and replace `dist/assets/sanjiv-sar
 npm run check
 ```
 
-Verified in the browser at desktop size and a 390 px mobile viewport: no horizontal overflow, section navigation and letter shortcuts, expandable experience entries, theme persistence, motion pause and reduced-motion preferences, and email copying. All local asset URLs, including the résumé PDF, returned HTTP 200. No browser console errors were observed. Mobile verification used viewport emulation, not a physical phone.
+Verified in headless Chromium at 1440 × 900 and with a 390 px mobile viewport: no horizontal overflow; intro playback and skipping; section shortcuts; project and toolkit expanders; theme inversion and persistence; reduced-motion and deep-link loads, which skip the intro; and no console errors. Mobile verification used viewport emulation, not a physical phone.
